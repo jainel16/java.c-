@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Jaiden's Program</title>
+    <link rel="stylesheet" href="mystyle.css">
+
+</head>
+
+<body>
+
+    <h1>Programs</h1>
+    <p>This is me rewriting my C++ programs in JavaScript</p>
+
+    <h2>Add 2 Numbers</h2>
+    <input type="number" id="num1" placeholder="Enter your first number:">
+    <input type="number" id="num2" placeholder="Enter your second number:">
+    <button onclick="calculateSum()">+</button>
+    <p>Result: <span id="result"></span></p>
+
+    <h2>Product 2 Numbers</h2>
+    <input type="number" id="pnum1" placeholder="Enter your first number:">
+    <input type="number" id="pnum2" placeholder="Enter your second number:">
+    <button onclick="calculateMul()">×</button>
+    <p>Result: <span id="presult"></span></p>
+
+    <h2>Subtract 2 Numbers</h2>
+    <input type="number" id="mnum1" placeholder="Enter your first number:">
+    <input type="number" id="mnum2" placeholder="Enter your second number:">
+    <button onclick="calculateSub()">−</button>
+    <p>Result: <span id="mresult"></span></p>
+
+    <h2>Divide 2 Numbers</h2>
+    <input type="number" id="dnum1" placeholder="Enter your first number:">
+    <input type="number" id="dnum2" placeholder="Enter your second number:">
+    <button onclick="calculateDiv()">÷</button>
+    <p>Result: <span id="dresult"></span></p>
+
+    <h2>Find the Larger Number</h2>
+    <input type="number" id="lnum1" placeholder="Enter your first number:">
+    <input type="number" id="lnum2" placeholder="Enter your second number:">
+    <button onclick="findLarger()">Compare</button>
+    <p>Result: <span id="lresult"></span></p>
+
+
+    <script>
+        function calculateSum() {
+            let num1 = parseFloat(document.getElementById('num1').value);
+            let num2 = parseFloat(document.getElementById('num2').value);
+            document.getElementById('result').textContent = num1 + num2;
+        }
+
+        function calculateMul() {
+            let pnum1 = parseFloat(document.getElementById('pnum1').value);
+            let pnum2 = parseFloat(document.getElementById('pnum2').value);
+            document.getElementById('presult').textContent = pnum1 * pnum2;
+        }
+
+        function calculateSub() {
+            let mnum1 = parseFloat(document.getElementById('mnum1').value);
+            let mnum2 = parseFloat(document.getElementById('mnum2').value);
+            document.getElementById('mresult').textContent = mnum1 - mnum2;
+        }
+
+        function calculateDiv() {
+            let dnum1 = parseFloat(document.getElementById('dnum1').value);
+            let dnum2 = parseFloat(document.getElementById('dnum2').value);
+
+            if (dnum2 === 0) {
+                document.getElementById('dresult').textContent = "Error: Divide by 0";
+            } else {
+                document.getElementById('dresult').textContent = dnum1 / dnum2;
+            }
+        }
+
+        function findLarger() {
+            let lnum1 = parseFloat(document.getElementById('lnum1').value);
+            let lnum2 = parseFloat(document.getElementById('lnum2').value);
+
+            if (lnum1 > lnum2) {
+                document.getElementById('lresult').textContent = lnum1 + " is larger";
+            } else if (lnum2 > lnum1) {
+                document.getElementById('lresult').textContent = lnum2 + " is larger";
+            } else {
+                document.getElementById('lresult').textContent = "Both numbers are equal";
+            }
+        }
+    </script>
+
+</body>
+
+</html>
